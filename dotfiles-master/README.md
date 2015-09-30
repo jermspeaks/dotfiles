@@ -2,15 +2,24 @@
 
 ## dotfiles
 
-Your dotfiles are how you personalize your system. I forked this from 
-[Zach Holman](http://zachholman.com/)'s dotfiles repo.
+Your dotfiles are how you personalize your system. These are mine.
+
+I was a little tired of having long alias files and everything strewn about
+(which is extremely common on other dotfiles projects, too). That led to this
+project being much more topic-centric. I realized I could split a lot of things
+up into the main areas I used (Ruby, git, system libraries, and so on), so I
+structured the project accordingly.
+
+If you're interested in the philosophy behind why projects like these are
+awesome, you might want to [read my post on the
+subject](http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/).
 
 ## install
 
 Run this:
 
 ```sh
-git clone https://github.com/jermspeaks/dotfiles.git ~/.dotfiles
+git clone https://github.com/holman/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap
 ```
