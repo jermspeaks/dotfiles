@@ -1,4 +1,4 @@
-# holman does dotfiles
+# [@jermspeaks](http://twitter.com/jermspeaks)' dotfiles
 
 ## dotfiles
 
