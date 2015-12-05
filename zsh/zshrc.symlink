@@ -1,41 +1,136 @@
-# shortcut to this dotfiles path is $ZSH
-export ZSH=$HOME/.dotfiles
+# Boatwright Cleanup Functions
+boatwrightCleanup() {
+  if [ -f ~/.config/boatwright/clusters.json ]
+    then
+      rm ~/.config/boatwright/clusters.json
+  fi
+}
 
-# your project folder that we can `c [tab]` to
-export PROJECTS=~/Code
+# Amazon Keys
+alias reverb-prod-env="source ~/.ec2/prod-keys; boatwrightCleanup"
+alias reverb-dev-env="source ~/.ec2/dev-keys; boatwrightCleanup"
+alias ndn-dev="source ~/.ec2/ndn-dev-keys; boatwrightCleanup"
 
-# Stash your environment variables in ~/.localrc. This means they'll stay out
-# of your main dotfiles repository (which may be public, like this one), but
-# you'll have access to them in your scripts.
-if [[ -a ~/.localrc ]]
-then
-  source ~/.localrc
+# Run NDN Development Environment
+ndn-dev
+
+# Autocompletions
+fpath=(/usr/local/share/zsh/site-functions $fpath)
+
+# add completion scripts
+fpath+=("/usr/local/share/zsh/site-functions")
+
+# initialze boatwright for local env
+eval "$(boatwright init)"
+
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/jeremywong/.oh-my-zsh
+
+# Theme
+ZSH_THEME="agnoster"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git vi-mode vagrant atom bower brew colorize)
+
+# User configuration
+
+export PATH="/Users/jeremywong/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
+
+source $ZSH/oh-my-zsh.sh
+
+# ssh
+export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# Export GOPATH
+export GOPATH=$HOME/go
+
+# DirENV
+eval "$(direnv hook zsh)"
+
+# PHP Environment - v5.6
+export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# WP-CLI Bash completions
+autoload bashcompinit
+bashcompinit
+source $HOME/.composer/vendor/wp-cli/wp-cli/utils/wp-completion.bash
+
+# want your terminal to support 256 color schemes? I do ...
+export TERM="xterm-256color"
+
+# if you do a 'rm *', Zsh will give you a sanity check!
+setopt RM_STAR_WAIT
+
+# allows you to type Bash style comments on your command line
+# good 'ol Bash
+setopt interactivecomments
+
+# Zsh has a spelling corrector
+setopt CORRECT
+
+# Defines transfer alias and provides easy command line file and folder sharing.
+#
+# Authors:
+#   Remco Verhoef <remco@dutchcoders.io>
+#
+
+if (( ! $+commands[curl] )); then
+  return 1
 fi
 
-# all of our zsh files
-typeset -U config_files
-config_files=($ZSH/**/*.zsh)
+transfer() {
+    # check arguments
+    if [ $# -eq 0 ];
+    then
+        echo "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"
+        return 1
+    fi
 
-# load the path files
-for file in ${(M)config_files:#*/path.zsh}
-do
-  source $file
-done
+    # get temporarily filename, output is written to this file show progress can be showed
+    tmpfile=$( mktemp -t transferXXX )
 
-# load everything but the path and completion files
-for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
-do
-  source $file
-done
+    # upload stdin or file
+    file=$1
 
-# initialize autocomplete here, otherwise functions won't be loaded
-autoload -U compinit
-compinit
+    if tty -s;
+    then
+        basefile=$(basename "$file" | sed -e 's/[^a-zA-Z0-9._-]/-/g')
 
-# load every completion after autocomplete loads
-for file in ${(M)config_files:#*/completion.zsh}
-do
-  source $file
-done
+        if [ ! -e $file ];
+        then
+            echo "File $file doesn't exists."
+            return 1
+        fi
 
-unset config_files
+        if [ -d $file ];
+        then
+            # zip directory and transfer
+            zipfile=$( mktemp -t transferXXX.zip )
+            cd $(dirname $file) && zip -r -q - $(basename $file) >> $zipfile
+            curl --progress-bar --upload-file "$zipfile" "https://transfer.sh/$basefile.zip" >> $tmpfile
+            rm -f $zipfile
+        else
+            # transfer file
+            curl --progress-bar --upload-file "$file" "https://transfer.sh/$basefile" >> $tmpfile
+        fi
+    else
+        # transfer pipe
+        curl --progress-bar --upload-file "-" "https://transfer.sh/$file" >> $tmpfile
+    fi
+
+    # cat output link
+    cat $tmpfile
+
+    # cleanup
+    rm -f $tmpfile
+}
+
+export PATH="/usr/local/sbin:$PATH"
+
+# Python Path
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
