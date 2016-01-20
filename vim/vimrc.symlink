@@ -5,9 +5,9 @@ set tabstop=2
 set shiftwidth=2
 set noexpandtab
 set number
-colorscheme monokai
-
+set relativenumber
 set nocompatible              " be iMproved, required
+
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -20,9 +20,13 @@ Plugin 'VundleVim/Vundle.vim'			" package manager (required)
 Plugin 'tpope/vim-fugitive'				" git tool
 Plugin 'godlygeek/tabular'				" text filtering & alignment
 Plugin 'plasticboy/vim-markdown' 	" markdown syntax
+Plugin 'tpope/vim-surround'				" Surround function
+Plugin 'flazz/vim-colorschemes'		" colorschemes
 " Plugins end
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+colorscheme monokai 
 
 " Markdown Settings
 let g:vim_markdown_folding_disabled=1
