@@ -1,11 +1,11 @@
 " Settings
-" Syntax permanently on
-syntax enable
-set tabstop=2
-set shiftwidth=2
-set noexpandtab
-set number
-colorscheme monokai
+syntax enable									" Enable syntax		
+set tabstop=2									" Tab stop @2
+set shiftwidth=2							" Shift width @2
+set noexpandtab								" do not expand tab
+set number										" set line numbers on left
+colorscheme monokai						" set color scheme @Monokai
+set rnu												" set relative numbers
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -20,9 +20,14 @@ Plugin 'VundleVim/Vundle.vim'			" package manager (required)
 Plugin 'tpope/vim-fugitive'				" git tool
 Plugin 'godlygeek/tabular'				" text filtering & alignment
 Plugin 'plasticboy/vim-markdown' 	" markdown syntax
+Plugin 'tpope/vim-surround'				" surround command
+Plugin 'pangloss/vim-javascript'	" Javascript language
+Plugin 'moll/vim-node'						" Node go to require file
 " Plugins end
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 " Markdown Settings
 let g:vim_markdown_folding_disabled=1
+let g:instant_markdown_autostart = 0
+let g:instant_markdown_slow = 1
