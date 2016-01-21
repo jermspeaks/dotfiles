@@ -40,6 +40,8 @@
   "linter-scss-lint":
     disableWhenNoConfigFileInPath: true
     executablePath: "/Users/jeremywong/.rvm/gems/ruby-2.1.5/wrappers/scss-lint"
+  "package-sync":
+    forceOverwrite: true
   "release-notes":
     viewedVersion: "0.89.0"
   "spell-check":
