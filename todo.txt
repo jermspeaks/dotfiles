@@ -1,3 +1,6 @@
 add homebrew
 add git
 add jumpcut
+
+brew install node
+sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}
