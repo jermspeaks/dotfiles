@@ -2,6 +2,11 @@
 #
 # bootstrap installs things.
 
+# TODO:
+# ADD - Vundle Installation
+# ADD - Oh-my-zsh
+# ADD - Zsh script: https://medium.com/salesforce-ux/iterm2-with-zsh-shell-5944ee0502ac#.dckif5g15
+
 cd "$(dirname "$0")/.."
 DOTFILES_ROOT=$(pwd)
 
