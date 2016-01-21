@@ -13,7 +13,6 @@
       "linter-jshint"
       "atom-license"
       "vim-mode"
-      "linter-jscs"
     ]
     hideGitIgnoredFiles: true
     ignoredNames: [
