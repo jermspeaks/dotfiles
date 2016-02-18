@@ -25,6 +25,8 @@ Plugin 'moll/vim-node'            " Node go to require file
 Plugin 'flazz/vim-colorschemes'		" Vim Colorschemes
 " Plugins end
 call vundle#end()            " required
+" Set Options for Go
+set rtp+=/usr/local/go/misc/vim
 filetype plugin indent on    " required
 
 colorscheme monokai           " set color scheme @Monokai

@@ -47,9 +47,6 @@ ZSH_THEME="robbyrussell"
 # ssh
 export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# Export GOPATH
-export GOPATH=$HOME/go
-
 # DirENV
 #eval "$(direnv hook zsh)"
 
@@ -151,8 +148,11 @@ export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 alias venv="source ~/pj/venv/bin/activate venv"
 
 # Go Set-up
-# export GOPATH=~/pj/golang
-# export GOWORKSPACE=$GOPATH/src/github.com/jermspeaks
+export GOPATH=$HOME/go
+export GOROOT=/usr/local/opt/go/libexec
+export GOWORKSPACE=$GOPATH/src/github.com/jermspeaks
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
 
 # Octave
 alias octave-start="/usr/local/octave/3.8.0/bin/octave-3.8.0 ; exit;"
