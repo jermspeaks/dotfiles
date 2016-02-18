@@ -1,0 +1,17 @@
+add homebrew
+add git
+add jumpcut
+
+brew install node
+sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}
+
+Setup Github
+https://help.github.com/articles/generating-ssh-keys/
+
+Considerations
+
+- Microsoft Office
+- Fantastical 2
+- Chrome
+- Atom
+- Flu.x

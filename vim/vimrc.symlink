@@ -1,11 +1,10 @@
 " Settings
-syntax enable									" Enable syntax		
-set tabstop=2									" Tab stop @2
-set shiftwidth=2							" Shift width @2
-set noexpandtab								" do not expand tab
-set number										" set line numbers on left
-colorscheme monokai						" set color scheme @Monokai
-set rnu												" set relative numbers
+syntax enable                 " Enable syntax   
+set tabstop=2                 " Tab stop @2
+set shiftwidth=2              " Shift width @2
+set noexpandtab               " do not expand tab
+set number                    " set line numbers on left
+set rnu                       " set relative numbers
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -16,32 +15,22 @@ call vundle#begin()
 
 " Plugins
 " Plugins start
-Plugin 'VundleVim/Vundle.vim'			" package manager (required)
-Plugin 'tpope/vim-fugitive'				" git tool
-Plugin 'godlygeek/tabular'				" text filtering & alignment
-Plugin 'plasticboy/vim-markdown' 	" markdown syntax
-Plugin 'tpope/vim-surround'				" surround command
-Plugin 'pangloss/vim-javascript'	" Javascript language
-Plugin 'moll/vim-node'						" Node go to require file
-Plugin 'scrooloose/nerdtree'			" Tree explorer plugin
+Plugin 'VundleVim/Vundle.vim'     " package manager (required)
+Plugin 'tpope/vim-fugitive'       " git tool
+Plugin 'godlygeek/tabular'        " text filtering & alignment
+Plugin 'plasticboy/vim-markdown'  " markdown syntax
+Plugin 'tpope/vim-surround'       " surround command
+Plugin 'pangloss/vim-javascript'  " Javascript language
+Plugin 'moll/vim-node'            " Node go to require file
+Plugin 'flazz/vim-colorschemes'		" Vim Colorschemes
 " Plugins end
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+colorscheme monokai           " set color scheme @Monokai
+
 " Markdown Settings
 " Disable Folding
 let g:vim_markdown_folding_disabled=1
-" Concealing is set for some syntax
-set conceallevel=2
-
-" NerdTree Settings
-" open a NERDTree automatically when vim starts up if no files were specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-" close vim if the only window left open is a NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" Nerdtree Use Different Arrows
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
-" NerdTree Mapping
-map <C-n> :NERDTreeToggle<CR>
+let g:instant_markdown_autostart = 0
+let g:instant_markdown_slow = 1
