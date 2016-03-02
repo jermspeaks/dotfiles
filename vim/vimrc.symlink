@@ -31,5 +31,5 @@ colorscheme monokai           " set color scheme @Monokai
 
 " Markdown Settings
 let g:vim_markdown_folding_disabled=1
-let g:instant_markdown_autostart = 0
+let g:instant_markdown_autostart = 1
 let g:instant_markdown_slow = 1
