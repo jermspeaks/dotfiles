@@ -27,3 +27,8 @@ And the download link: http://java.com/en/download/mac_download.jsp
 Gem installs
 - scss-lint
 
+Brew installs
+- Git Flow
+
+Docker
+- https://www.docker.com/products/docker-toolbox

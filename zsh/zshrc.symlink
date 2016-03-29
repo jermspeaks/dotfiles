@@ -177,3 +177,7 @@ source $ZSH/oh-my-zsh.sh
 
 # pkg-config
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
+
+# Java projects
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export PATH=${JAVA_HOME}/bin:$PATH
