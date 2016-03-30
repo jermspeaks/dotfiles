@@ -1,0 +1,29 @@
+add homebrew
+add git
+add jumpcut
+
+brew install node
+sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}
+
+Setup Github
+https://help.github.com/articles/generating-ssh-keys/
+
+Considerations
+
+- Microsoft Office
+- Fantastical 2
+- Chrome
+- Atom
+- Flu.x
+- Dropbox
+- Ngrok
+
+Hack Font
+
+Add Java version upgrade
+This can help: http://stackoverflow.com/questions/12757558/installed-java-7-on-mac-os-x-but-terminal-is-still-using-version-6
+And the download link: http://java.com/en/download/mac_download.jsp
+
+Gem installs
+- scss-lint
+

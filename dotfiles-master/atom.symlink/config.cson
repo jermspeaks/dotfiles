@@ -5,6 +5,7 @@
     css_convert_quotes: "double"
     css_newline_between_rules: true
     css_selector_separator_newline: true
+  "autocomplete-plus": {}
   core:
     disabledPackages: [
       "background-tips"
@@ -13,7 +14,7 @@
       "linter-jshint"
       "atom-license"
       "vim-mode"
-      "linter-jscs"
+      "jshint"
     ]
     hideGitIgnoredFiles: true
     ignoredNames: [
@@ -29,17 +30,27 @@
       "monokai"
     ]
   editor:
-    fontFamily: "Menlo"
+    fontFamily: "Hack"
+    fontSize: 12
     invisibles: {}
     showIndentGuide: true
     softWrapAtPreferredLineLength: true
+  emmet: {}
   jsformat:
     format_on_save: false
-  linter: {}
-  "linter-eslint": {}
+  "language-babel": {}
+  linter:
+    errorPanelHeight: 22
+  "linter-eslint":
+    globalNodePath: "/usr/local"
+    useGlobalEslint: true
+  "linter-jscs":
+    esnext: true
+    onlyConfig: true
   "linter-scss-lint":
     disableWhenNoConfigFileInPath: true
-    executablePath: "/Users/jeremywong/.rvm/gems/ruby-2.1.5/wrappers/scss-lint"
+  "package-sync":
+    forceOverwrite: true
   "release-notes":
     viewedVersion: "0.89.0"
   "spell-check":
@@ -48,6 +59,15 @@
       "source.gfm"
       "text.git-commit"
     ]
+  "todo-show":
+    sortAscending: false
+    sortBy: "Type"
   "vim-mode": {}
   welcome:
     showOnStartup: false
+".js.jsx.source":
+  editor:
+    autoIndent: true
+".js.source":
+  editor:
+    autoIndent: true

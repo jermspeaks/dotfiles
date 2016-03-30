@@ -1,0 +1,5 @@
+'packages': [
+	'minimap'
+  'merge-conflicts'
+  'package-sync'
+]
