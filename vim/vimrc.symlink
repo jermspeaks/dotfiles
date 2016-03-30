@@ -7,6 +7,7 @@ set number                    " set line numbers on left
 set rnu                       " set relative numbers
 
 set nocompatible              " be iMproved, required
+
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
