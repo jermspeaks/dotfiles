@@ -7,6 +7,7 @@ set number                    " set line numbers on left
 set rnu                       " set relative numbers
 
 set nocompatible              " be iMproved, required
+
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -35,5 +36,5 @@ colorscheme monokai           " set color scheme @Monokai
 " Markdown Settings
 " Disable Folding
 let g:vim_markdown_folding_disabled=1
-let g:instant_markdown_autostart = 0
+let g:instant_markdown_autostart = 1
 let g:instant_markdown_slow = 1

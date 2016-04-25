@@ -9,7 +9,7 @@ boatwrightCleanup() {
 # Amazon Keys
 #alias reverb-prod-env="source ~/.ec2/prod-keys; boatwrightCleanup"
 #alias reverb-dev-env="source ~/.ec2/dev-keys; boatwrightCleanup"
-#alias ndn-dev="source ~/.ec2/ndn-dev-keys; boatwrightCleanup"
+alias ndn-dev="source ~/.ndn-aws-creds; boatwrightCleanup"
 
 # Run NDN Development Environment
 #ndn-dev
@@ -175,6 +175,7 @@ PATH="$NPM_PACKAGES/bin:$PATH"
 # load oh my zsh
 source $ZSH/oh-my-zsh.sh
 
-
-
 . /Users/Jeremy/torch/install/bin/torch-activate
+
+# pkg-config
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig

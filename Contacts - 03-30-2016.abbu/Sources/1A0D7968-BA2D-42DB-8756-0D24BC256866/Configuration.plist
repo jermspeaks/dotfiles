@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>_className</key>
+	<string>ABExchangeSource</string>
+	<key>autodiscoverServerName</key>
+	<string>outlook.office365.com</string>
+	<key>autodiscoverServerPath</key>
+	<string>/autodiscover/autodiscover.xml</string>
+	<key>autodiscoverUseSSL</key>
+	<true/>
+	<key>disabled</key>
+	<false/>
+	<key>emailAddress</key>
+	<string>jwong@newsinc.com</string>
+	<key>externalServerName</key>
+	<string>outlook.office365.com</string>
+	<key>externalServerRootPath</key>
+	<string>/EWS/Exchange.asmx</string>
+	<key>externalUseSSL</key>
+	<true/>
+	<key>fullName</key>
+	<string>Jeremy Wong</string>
+	<key>name</key>
+	<string>Exchange</string>
+	<key>rootFolderId</key>
+	<string>AAMkADA1NDBiYmQzLTk3YTctNGQ5Yi1hYzczLTBjYzcxYTU0MjQ5ZQAuAAAAAADKgOW38uU3Sbccd/P72gISAQChtciu+FXEQ6yK10nNgfr/AAAAAAEBAAA=</string>
+	<key>serverName</key>
+	<string>outlook.office365.com</string>
+	<key>serverRootPath</key>
+	<string>/EWS/Exchange.asmx</string>
+	<key>useSSL</key>
+	<true/>
+	<key>userName</key>
+	<string>jwong@newsinc.com</string>
+</dict>
+</plist>
