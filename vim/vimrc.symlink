@@ -1,4 +1,4 @@
-" Settings
+" settings
 syntax enable                 " Enable syntax   
 set tabstop=2                 " Tab stop @2
 set shiftwidth=2              " Shift width @2
@@ -23,6 +23,7 @@ Plugin 'tpope/vim-surround'       " surround command
 Plugin 'pangloss/vim-javascript'  " Javascript language
 Plugin 'moll/vim-node'            " Node go to require file
 Plugin 'flazz/vim-colorschemes'		" Vim Colorschemes
+Plugin 'lambdatoast/elm.vim'			" Elm Language
 " Plugins end
 call vundle#end()            " required
 " Set Options for Go

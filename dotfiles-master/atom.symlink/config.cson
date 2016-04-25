@@ -13,6 +13,7 @@
       "linter-jshint"
       "atom-license"
       "vim-mode"
+      "linter-jscs"
     ]
     hideGitIgnoredFiles: true
     ignoredNames: [
@@ -29,6 +30,7 @@
     ]
   editor:
     fontFamily: "Menlo"
+    fontSize: 11
     invisibles: {}
     showIndentGuide: true
     softWrapAtPreferredLineLength: true
