@@ -3,6 +3,7 @@ add git
 add jumpcut
 
 brew install node
+brew install mvim
 sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}
 
 Setup Github
@@ -26,4 +27,3 @@ And the download link: http://java.com/en/download/mac_download.jsp
 
 Gem installs
 - scss-lint
-
