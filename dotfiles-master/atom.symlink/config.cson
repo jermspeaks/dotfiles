@@ -63,6 +63,7 @@
       "linter-jshint"
       "atom-license"
       "vim-mode"
+      "linter-jscs"
       "jshint"
       "linter-jscs"
     ]

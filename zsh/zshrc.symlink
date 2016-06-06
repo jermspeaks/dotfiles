@@ -1,4 +1,4 @@
-# Boatwright Cleanup Functions
+#Boatwright Cleanup Functions
 boatwrightCleanup() {
   if [ -f ~/.config/boatwright/clusters.json ]
     then
@@ -178,6 +178,8 @@ PATH="$NPM_PACKAGES/bin:$PATH"
 
 # load oh my zsh
 source $ZSH/oh-my-zsh.sh
+
+. /Users/Jeremy/torch/install/bin/torch-activate
 
 # pkg-config
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
