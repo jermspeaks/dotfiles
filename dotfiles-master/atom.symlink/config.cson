@@ -1,10 +1,59 @@
 "*":
   "atom-beautify":
-    _analyticsUserId: "f59db489-1c91-41e9-aa41-1f800e9eed30"
-    beautifyEntireFileOnSave: false
-    css_convert_quotes: "double"
-    css_newline_between_rules: true
-    css_selector_separator_newline: true
+    apex: {}
+    arduino: {}
+    c: {}
+    cfml: {}
+    coffeescript: {}
+    cpp: {}
+    cs: {}
+    css:
+      convert_quotes: "double"
+      newline_between_rules: true
+      selector_separator_newline: true
+    d: {}
+    ejs: {}
+    erb: {}
+    fortran: {}
+    general:
+      _analyticsUserId: "f59db489-1c91-41e9-aa41-1f800e9eed30"
+      beautifyEntireFileOnSave: false
+    gherkin: {}
+    handlebars: {}
+    html: {}
+    jade: {}
+    java: {}
+    js:
+      end_with_newline: true
+      indent_size: 2
+    json:
+      indent_size: 2
+    jsx: {}
+    latex: {}
+    less: {}
+    marko: {}
+    mustache: {}
+    objectivec: {}
+    pawn: {}
+    perl: {}
+    php: {}
+    python: {}
+    riot: {}
+    ruby: {}
+    rust: {}
+    sass: {}
+    scss: {}
+    spacebars: {}
+    sql: {}
+    svg: {}
+    swig: {}
+    tss: {}
+    twig: {}
+    typescript: {}
+    vala: {}
+    visualforce: {}
+    xml: {}
+    xtemplate: {}
   "autocomplete-plus": {}
   core:
     disabledPackages: [
@@ -15,6 +64,7 @@
       "atom-license"
       "vim-mode"
       "jshint"
+      "linter-jscs"
     ]
     hideGitIgnoredFiles: true
     ignoredNames: [
@@ -40,7 +90,7 @@
     format_on_save: false
   "language-babel": {}
   linter:
-    errorPanelHeight: 22
+    errorPanelHeight: 230
   "linter-eslint":
     globalNodePath: "/usr/local"
     useGlobalEslint: true
