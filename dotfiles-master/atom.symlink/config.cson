@@ -63,9 +63,9 @@
       "linter-jshint"
       "atom-license"
       "vim-mode"
-      "linter-jscs"
       "jshint"
       "linter-jscs"
+      "react"
     ]
     hideGitIgnoredFiles: true
     ignoredNames: [
@@ -91,11 +91,12 @@
     format_on_save: false
   "language-babel": {}
   linter:
-    errorPanelHeight: 230
+    errorPanelHeight: 23
   "linter-eslint":
     globalNodePath: "/usr/local"
     useGlobalEslint: true
   "linter-jscs":
+    displayAs: "warning"
     esnext: true
     onlyConfig: true
   "linter-scss-lint":

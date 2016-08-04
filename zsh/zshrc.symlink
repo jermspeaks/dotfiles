@@ -188,3 +188,6 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
 # Java projects
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export PATH=${JAVA_HOME}/bin:$PATH
+
+# Haskell projects
+export PATH="$HOME/.stack/snapshots/x86_64-osx/lts-6.10/7.10.3/bin:$HOME/.stack/programs/x86_64-osx/ghc-7.10.3/bin:$PATH"
