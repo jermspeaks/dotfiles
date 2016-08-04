@@ -29,6 +29,7 @@ Plugin 'lambdatoast/elm.vim'			" Elm Language
 Plugin 'scrooloose/nerdtree'			" Directory
 Plugin 'wincent/command-t'				" Fast file navigation
 Plugin 'suan/vim-instant-markdown' " Markdown Preview
+Plugin 'vim-airline/vim-airline'	" Airline bar, like Powerline
 " Plugins end
 call vundle#end()            " required
 
@@ -49,3 +50,6 @@ let g:instant_markdown_slow = 1
 
 " Add JSX syntax to .js files too
 let g:jsx_ext_required = 0
+
+" Default airline with tabline and extensions
+let g:airline#extensions#tabline#enabled = 1
