@@ -1,11 +1,3 @@
-#Boatwright Cleanup Functions
-boatwrightCleanup() {
-  if [ -f ~/.config/boatwright/clusters.json ]
-    then
-      rm ~/.config/boatwright/clusters.json
-  fi
-}
-
 # Amazon Keys
 #alias reverb-prod-env="source ~/.ec2/prod-keys; boatwrightCleanup"
 #alias reverb-dev-env="source ~/.ec2/dev-keys; boatwrightCleanup"
