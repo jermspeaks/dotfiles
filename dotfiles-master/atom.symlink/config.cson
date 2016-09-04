@@ -1,7 +1,5 @@
 "*":
   "atom-beautify":
-<<<<<<< HEAD
-=======
     apex: {}
     arduino: {}
     c: {}
@@ -9,16 +7,10 @@
     coffeescript: {}
     cpp: {}
     cs: {}
->>>>>>> 3fe41f29953c752f290cceb6d5c7bd1f93349920
     css:
       convert_quotes: "double"
       newline_between_rules: true
       selector_separator_newline: true
-<<<<<<< HEAD
-    general:
-      _analyticsUserId: "f59db489-1c91-41e9-aa41-1f800e9eed30"
-      beautifyEntireFileOnSave: false
-=======
     d: {}
     ejs: {}
     erb: {}
@@ -62,7 +54,6 @@
     visualforce: {}
     xml: {}
     xtemplate: {}
->>>>>>> 3fe41f29953c752f290cceb6d5c7bd1f93349920
   "autocomplete-plus": {}
   core:
     disabledPackages: [
