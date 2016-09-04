@@ -1,10 +1,10 @@
-" settings
+" Vim Settings
 syntax enable                 " Enable syntax   
 set tabstop=2                 " Tab stop @2
 set shiftwidth=2              " Shift width @2
 set noexpandtab               " do not expand tab
 set number                    " set line numbers on left
-set rnu                       " set relative numbers
+"set rnu                       " set relative numbers
 
 set nocompatible              " be iMproved, required
 
@@ -22,11 +22,16 @@ Plugin 'godlygeek/tabular'        " text filtering & alignment
 Plugin 'plasticboy/vim-markdown'  " markdown syntax
 Plugin 'tpope/vim-surround'       " surround command
 Plugin 'pangloss/vim-javascript'  " Javascript language
+Plugin 'mxw/vim-jsx'							" Javascript JSX language
 Plugin 'moll/vim-node'            " Node go to require file
 Plugin 'flazz/vim-colorschemes'		" Vim Colorschemes
 Plugin 'lambdatoast/elm.vim'			" Elm Language
+Plugin 'scrooloose/nerdtree'			" Directory
+Plugin 'wincent/command-t'				" Fast file navigation
+Plugin 'suan/vim-instant-markdown' " Markdown Preview
 " Plugins end
 call vundle#end()            " required
+
 " Set Options for Go
 set rtp+=/usr/local/go/misc/vim
 filetype plugin indent on    " required
@@ -35,6 +40,12 @@ colorscheme monokai           " set color scheme @Monokai
 
 " Markdown Settings
 " Disable Folding
-let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_folding_disabled = 1
 let g:instant_markdown_autostart = 1
 let g:instant_markdown_slow = 1
+
+" Automatically start nerdtree
+" autocmd vimenter * NERDTree
+
+" Add JSX syntax to .js files too
+let g:jsx_ext_required = 0

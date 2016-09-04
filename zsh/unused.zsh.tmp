@@ -1,0 +1,10 @@
+# Unused functions for ZSH
+
+#Boatwright Cleanup Functions
+boatwrightCleanup() {
+  if [ -f ~/.config/boatwright/clusters.json ]
+    then
+      rm ~/.config/boatwright/clusters.json
+  fi
+}
+
