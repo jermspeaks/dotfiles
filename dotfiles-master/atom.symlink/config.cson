@@ -1,10 +1,12 @@
 "*":
   "atom-beautify":
-    _analyticsUserId: "f59db489-1c91-41e9-aa41-1f800e9eed30"
-    beautifyEntireFileOnSave: false
-    css_convert_quotes: "double"
-    css_newline_between_rules: true
-    css_selector_separator_newline: true
+    css:
+      convert_quotes: "double"
+      newline_between_rules: true
+      selector_separator_newline: true
+    general:
+      _analyticsUserId: "f59db489-1c91-41e9-aa41-1f800e9eed30"
+      beautifyEntireFileOnSave: false
   "autocomplete-plus": {}
   core:
     disabledPackages: [

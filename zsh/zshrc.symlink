@@ -36,7 +36,7 @@ BUNDLED_COMMANDS=(rubocop)
 
 # User configuration
 
-export PATH="/Users/jeremywong/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
+export PATH="/Users/jeremywong/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Users/Jeremy/.local/bin"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -179,3 +179,6 @@ source $ZSH/oh-my-zsh.sh
 
 # pkg-config
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
+
+# Stack Path config
+export PATH="$PATH:$HOME/.stack/global-project/.stack-work/install/x86_64-osx/lts-6.9/7.10.3/pkgdb:$HOME/.stack/snapshots/x86_64-osx/lts-6.9/7.10.3/pkgdb:$HOME/.stack/programs/x86_64-osx/ghc-7.10.3/lib/ghc-7.10.3/package.conf.d:$HOME/.stack/snapshots/x86_64-osx/lts-6.9/7.10.3/bin:$HOME/.stack/programs/x86_64-osx/ghc-7.10.3/bin"
