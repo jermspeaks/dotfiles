@@ -35,6 +35,7 @@ atom.symlink/packages
 atom.symlink/storage
 atom.symlink/themes
 
+dotfiles-master/atom.symlink/blob-store
 ### Git ###
 # symlink files
 git/gitconfig.symlink

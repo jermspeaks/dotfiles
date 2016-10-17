@@ -28,7 +28,7 @@ BUNDLED_COMMANDS=(rubocop)
 
 # User configuration
 
-export PATH="/Users/jeremywong/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Users/Jeremy/.local/bin"
+export PATH="$PATH:/Users/jeremywong/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Users/Jeremy/.local/bin"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
