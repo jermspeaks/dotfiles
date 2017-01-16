@@ -2,7 +2,7 @@
 alias reload!='. ~/.zshrc'
 
 # Good 'ol Clear Screen command
-alias cls='clear'
+alias clr='clear'
 
 # Exit commands
 alias ee="exit"

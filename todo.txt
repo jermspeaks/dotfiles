@@ -33,3 +33,11 @@ Brew installs
 
 Docker
 - https://www.docker.com/products/docker-toolbox
+
+Might be necessary
+sudo rm /sbin/mount_ntfs
+
+sudo mv /sbin/mount_ntfs.original /sbin/mount_ntfs
+
+brew uninstall ntfs-3g
+http://www.howtogeek.com/236055/how-to-write-to-ntfs-drives-on-a-mac/

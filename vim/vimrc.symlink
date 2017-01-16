@@ -2,10 +2,10 @@
 syntax enable                 " Enable syntax   
 set tabstop=2                 " Tab stop @2
 set shiftwidth=2              " Shift width @2
-set noexpandtab               " do not expand tab
+set expandtab                 " Uses spaces over tabs
 set number                    " set line numbers on left
 "set rnu                       " set relative numbers
-
+set noerrorbells              " No beeps
 set nocompatible              " be iMproved, required
 
 filetype off                  " required
