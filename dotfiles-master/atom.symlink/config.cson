@@ -76,6 +76,7 @@
       "tmp"
       "vendor"
     ]
+    telemetryConsent: "limited"
     themes: [
       "atom-dark-ui"
       "monokai"
@@ -89,9 +90,10 @@
   emmet: {}
   jsformat:
     format_on_save: false
-  "language-babel": {}
+  "language-babel":
+    autoIndentJSX: false
   linter:
-    errorPanelHeight: 23
+    errorPanelHeight: 25
   "linter-eslint":
     globalNodePath: "/usr/local"
     useGlobalEslint: true
