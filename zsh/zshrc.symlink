@@ -1,3 +1,18 @@
+# Shortcut to dotfiles
+export ZSH=$HOME/.dotfiles
+
+# all of our zsh files
+typeset -U config_files
+config_files=($ZSH/zsh/*.zsh)
+
+# load everything but the path and completion files
+for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
+do
+	source $file
+done
+
+unset config_files
+
 # Amazon Keys
 #alias reverb-prod-env="source ~/.ec2/prod-keys; boatwrightCleanup"
 #alias reverb-dev-env="source ~/.ec2/dev-keys; boatwrightCleanup"
@@ -186,3 +201,6 @@ export PATH=${JAVA_HOME}/bin:$PATH
 
 # Haskell projects
 export PATH="$HOME/.stack/snapshots/x86_64-osx/lts-6.10/7.10.3/bin:$HOME/.stack/programs/x86_64-osx/ghc-7.10.3/bin:$PATH"
+
+# Add Yarn
+export PATH="$HOME/.yarn/bin:$PATH"

@@ -2,10 +2,10 @@
 syntax enable                 " Enable syntax   
 set tabstop=2                 " Tab stop @2
 set shiftwidth=2              " Shift width @2
-set noexpandtab               " do not expand tab
+set expandtab                 " Uses spaces over tabs
 set number                    " set line numbers on left
 "set rnu                       " set relative numbers
-
+set noerrorbells              " No beeps
 set nocompatible              " be iMproved, required
 
 filetype off                  " required
@@ -29,6 +29,7 @@ Plugin 'lambdatoast/elm.vim'			" Elm Language
 Plugin 'scrooloose/nerdtree'			" Directory
 Plugin 'wincent/command-t'				" Fast file navigation
 Plugin 'suan/vim-instant-markdown' " Markdown Preview
+Plugin 'vim-airline/vim-airline'	" Airline bar, like Powerline
 " Plugins end
 call vundle#end()            " required
 
@@ -49,3 +50,6 @@ let g:instant_markdown_slow = 1
 
 " Add JSX syntax to .js files too
 let g:jsx_ext_required = 0
+
+" Default airline with tabline and extensions
+let g:airline#extensions#tabline#enabled = 1

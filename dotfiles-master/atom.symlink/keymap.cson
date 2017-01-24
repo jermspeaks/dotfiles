@@ -32,3 +32,6 @@
   'cmd-k cmd-f cmd-8': 'pane-manager:focus-to-pane-eight'
   'cmd-k cmd-f cmd-9': 'pane-manager:focus-to-pane-nine'
   'cmd-k cmd-f cmd-0': 'pane-manager:focus-to-pane-ten'
+# Add emmet support in JSX syntax
+# 'atom-text-editor[data-grammar~="jsx"]:not([mini])':
+#   'tab': 'emmet:expand-abbreviation-with-tab'
