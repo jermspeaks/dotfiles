@@ -19,6 +19,9 @@ Considerations
 - Dropbox
 - Ngrok
 
+Add RVM
+https://rvm.io/
+
 Hack Font
 
 Add Java version upgrade

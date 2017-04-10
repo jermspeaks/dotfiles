@@ -36,7 +36,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git vi-mode vagrant atom bower brew colorize bundler bower git-flow-completion)
+plugins=(git vi-mode vagrant atom bower brew colorize bundler bower)
 
 # Bundled Commands
 BUNDLED_COMMANDS=(rubocop)
@@ -62,6 +62,7 @@ export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # WP-CLI Bash completions
 #autoload bashcompinit
@@ -204,3 +205,18 @@ export PATH="$HOME/.stack/snapshots/x86_64-osx/lts-6.10/7.10.3/bin:$HOME/.stack/
 
 # Add Yarn
 export PATH="$HOME/.yarn/bin:$PATH"
+
+# Registers the previous command to `pet`
+function prev() {
+  PREV=$(fc -lrn | head -n 1)
+  sh -c "pet new `printf %q "$PREV"`"
+}
+
+# Selects snippets at the current line
+function pet-select() {
+  BUFFER=$(pet search --query "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle redisplay
+}
+zle -N pet-select
+bindkey '^s' pet-select
