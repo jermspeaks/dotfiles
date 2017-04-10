@@ -1,0 +1,75 @@
+/**
+ * These actions correspond to the history API.
+ * The associated routerMiddleware will capture these events before they get to
+ * your reducer and reissue them as the matching function on your history.
+ */
+import {
+  push as _push,
+  replace as _replace,
+  go as _go,
+  goBack as _goBack,
+  goForward as _goForward
+} from 'react-router-redux';
+
+/**
+ * Methods for the History interface
+ * "The History interface allows to manipulate the browser session history,
+ * that is the pages visited in the tab or frame that the current page is loaded in."
+ * For more information, the following link describes the History interface in depth
+ * https://developer.mozilla.org/en-US/docs/Web/API/History
+ *
+ * React-router-redux keeps the state in sync with the router (react-router)
+ * For more information about the react-router-redux library api, please refer to the
+ * link below.
+ * https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux
+ */
+
+/**
+ * A location object is conceptually similar to document.location in web browsers,
+ * with a few extra goodies.
+ * More information: https://github.com/ReactTraining/history/blob/v3/docs/Location.md
+ * @type  {Object}
+ * @param {String}  pathname  The pathname portion of the URL, without query string
+ * @param {String}  search    The query string portion of the URL, including the ?
+ * @param {Object}  state     An object of data tied to this location
+ * @param {String}  action    ENUM. On of PUSH, REPLACE, or POP
+ * @param {String}  key       A unique identifier for this location
+ */
+// const location = {};
+
+/**
+ * Pushes the given data onto the session history stack with the specified title and, if provided, URL.
+ * @param  {Object}   location See above in the "location object" documentation
+ */
+export const push = location => _push(location);
+
+/**
+ * Updates the most recent entry on the history stack to have the specified
+ * data, title, and, if provided, URL.
+ * @param  {Object}   location See above in the "location object" documentation
+ */
+export const replace = location => _replace(location);
+
+/**
+ * Load page from session history.
+ * More Information:
+ * For example, -1 would mean go back one page
+ * @param  {Number}   number Integer of how far forward of back in user session to go
+ */
+export const go = number => _go(number);
+
+/**
+ * Goes to the previous page in session history,
+ * the same action as when the user clicks the browser's Back button
+ * Equivalent to go(-1).
+ */
+export const goBack = () => _goBack();
+
+/**
+ * Goes to the next page in session history,
+ * the same action as when the user clicks the browser's Forward button
+ * For example, -1 would mean go back one page
+ * Equivalent to go(1).
+ * @param  {Number}   number Integer of how far forward of back in user session to go
+ */
+export const goForward = () => _goForward();
