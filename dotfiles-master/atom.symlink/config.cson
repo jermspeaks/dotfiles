@@ -87,6 +87,7 @@
     invisibles: {}
     showIndentGuide: true
     softWrapAtPreferredLineLength: true
+    tabLength: 4
   emmet: {}
   jsformat:
     format_on_save: false
