@@ -1,1 +1,9 @@
-{}
+[
+  {
+    title: "Local Launch Newsinc Com"
+    paths: [
+      "/Users/jwong/Sites/local-launch.newsinc.com"
+    ]
+    devMode: true
+  }
+]

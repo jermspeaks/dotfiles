@@ -62,6 +62,7 @@ export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # WP-CLI Bash completions
 #autoload bashcompinit
@@ -204,3 +205,18 @@ export PATH="$HOME/.stack/snapshots/x86_64-osx/lts-6.10/7.10.3/bin:$HOME/.stack/
 
 # Add Yarn
 export PATH="$HOME/.yarn/bin:$PATH"
+
+# Registers the previous command to `pet`
+function prev() {
+  PREV=$(fc -lrn | head -n 1)
+  sh -c "pet new `printf %q "$PREV"`"
+}
+
+# Selects snippets at the current line
+function pet-select() {
+  BUFFER=$(pet search --query "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle redisplay
+}
+zle -N pet-select
+bindkey '^s' pet-select

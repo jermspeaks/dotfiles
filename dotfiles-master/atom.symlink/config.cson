@@ -87,6 +87,7 @@
     invisibles: {}
     showIndentGuide: true
     softWrapAtPreferredLineLength: true
+    tabLength: 4
   emmet: {}
   jsformat:
     format_on_save: false
@@ -102,7 +103,13 @@
     onlyConfig: true
   "linter-scss-lint":
     disableWhenNoConfigFileInPath: true
+<<<<<<< HEAD
   "linter-ui-default": {}
+=======
+  "linter-ui-default":
+    showPanel: true
+  minimap: {}
+>>>>>>> 0134385d48b898ba63e41612eef435f75b637ef3
   "package-sync":
     forceOverwrite: true
   "release-notes":
@@ -113,12 +120,15 @@
       "source.gfm"
       "text.git-commit"
     ]
+  "split-diff":
+    ignoreWhitespace: true
   "todo-show":
     sortAscending: false
     sortBy: "Type"
   "vim-mode": {}
   welcome:
     showOnStartup: false
+  whitespace: {}
 ".js.jsx.source":
   editor:
     autoIndent: true
