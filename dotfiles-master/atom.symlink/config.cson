@@ -92,8 +92,7 @@
     format_on_save: false
   "language-babel":
     autoIndentJSX: false
-  linter:
-    errorPanelHeight: 25
+  linter: {}
   "linter-eslint":
     globalNodePath: "/usr/local"
     useGlobalEslint: true
@@ -103,6 +102,7 @@
     onlyConfig: true
   "linter-scss-lint":
     disableWhenNoConfigFileInPath: true
+  "linter-ui-default": {}
   "package-sync":
     forceOverwrite: true
   "release-notes":
