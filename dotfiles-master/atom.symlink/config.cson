@@ -103,13 +103,9 @@
     onlyConfig: true
   "linter-scss-lint":
     disableWhenNoConfigFileInPath: true
-<<<<<<< HEAD
-  "linter-ui-default": {}
-=======
   "linter-ui-default":
+    minimap: {}
     showPanel: true
-  minimap: {}
->>>>>>> 0134385d48b898ba63e41612eef435f75b637ef3
   "package-sync":
     forceOverwrite: true
   "release-notes":
