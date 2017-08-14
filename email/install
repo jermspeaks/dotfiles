@@ -1,0 +1,4 @@
+#/bin/bash
+
+echo "Install Nylas Mail"
+open https://www.nylas.com/download

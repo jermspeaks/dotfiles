@@ -1,0 +1,13 @@
+#/bin/bash
+
+echo "Installing homebrew packages"
+
+echo "Install zsh and zsh-completions"
+echo "Testing if there is an existing version"
+which zsh
+# if there is a response here, go ahead and check version
+zsh --version
+brew install zsh zsh-completions
+
+echo "Install Oh My Zsh"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 

@@ -46,3 +46,8 @@ sudo mv /sbin/mount_ntfs.original /sbin/mount_ntfs
 
 brew uninstall ntfs-3g
 http://www.howtogeek.com/236055/how-to-write-to-ntfs-drives-on-a-mac/
+
+Installing Browsers:
+
+[Chrome](https://www.google.com/chrome/browser/desktop/index.html)
+[Firefox](https://www.mozilla.org/en-US/)
