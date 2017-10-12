@@ -8,6 +8,9 @@ sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}
 
 ADD: http://railsapps.github.io/xcode-command-line-tools.html
 
+# NPM Permissions issue
+https://docs.npmjs.com/getting-started/fixing-npm-permissions
+
 Setup Github
 https://help.github.com/articles/generating-ssh-keys/
 
