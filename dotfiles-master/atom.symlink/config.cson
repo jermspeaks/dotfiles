@@ -86,7 +86,7 @@
     ]
   editor:
     fontFamily: "Hack"
-    fontSize: 12
+    fontSize: 16
     invisibles: {}
     showIndentGuide: true
     softWrapAtPreferredLineLength: true
