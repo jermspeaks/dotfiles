@@ -1,3 +1,6 @@
+add ohmyzsh
+add vim plugins
+
 add homebrew
 add git
 add jumpcut
