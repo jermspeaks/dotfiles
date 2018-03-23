@@ -13,6 +13,8 @@ sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}
 Visual Studio Code: https://code.visualstudio.com/Download
 Sublime: https://www.sublimetext.com/3
 
+Vim Package manager: Vundle - https://github.com/VundleVim/Vundle.Vim
+
 ADD: http://railsapps.github.io/xcode-command-line-tools.html
 
 # NPM Permissions issue

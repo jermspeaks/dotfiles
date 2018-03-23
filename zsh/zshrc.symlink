@@ -142,7 +142,7 @@ transfer() {
 export PATH="/usr/local/sbin:$PATH"
 
 # Python Path
-export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+# export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 # Set architecture flags
 export ARCHFLAGS="-arch x86_64"
 # Ensure user-installed binaries take precedence
@@ -197,8 +197,8 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
 export PATH="$PATH:$HOME/.stack/global-project/.stack-work/install/x86_64-osx/lts-6.9/7.10.3/pkgdb:$HOME/.stack/snapshots/x86_64-osx/lts-6.9/7.10.3/pkgdb:$HOME/.stack/programs/x86_64-osx/ghc-7.10.3/lib/ghc-7.10.3/package.conf.d:$HOME/.stack/snapshots/x86_64-osx/lts-6.9/7.10.3/bin:$HOME/.stack/programs/x86_64-osx/ghc-7.10.3/bin"
 
 # Java projects
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-export PATH=${JAVA_HOME}/bin:$PATH
+# export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+# export PATH=${JAVA_HOME}/bin:$PATH
 
 # Haskell projects
 export PATH="$HOME/.stack/snapshots/x86_64-osx/lts-6.10/7.10.3/bin:$HOME/.stack/programs/x86_64-osx/ghc-7.10.3/bin:$PATH"
@@ -220,3 +220,14 @@ function pet-select() {
 }
 zle -N pet-select
 bindkey '^s' pet-select
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jeremywong/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/jeremywong/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/jeremywong/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/jeremywong/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Load aliases from common aliases file
+if [ -f ~/.aliases ]; then
+  . ~/.aliases
+fi
