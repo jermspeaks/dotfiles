@@ -1,0 +1,8 @@
+#/bin/bash
+
+echo "installing homebrew"
+# Installing Homebrew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+echo "Install Successful"
+echo "For more information about homebrew, go to https://brew.sh"

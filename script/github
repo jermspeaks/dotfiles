@@ -1,0 +1,17 @@
+# TODO wait for user input on email
+sh-keygen -t rsa -b 4096 -C "your_email@example.com"
+echo "Generating public/private rsa key pair."
+
+eval "$(ssh-agent -s)"
+
+echo "Adding SSH private key to ssh-agent"
+ssh-add -K ~/.ssh/id_rsa
+
+echo "opening ssh and gpg keys from Github to add to your account"
+
+open "https://github.com/settings/keys"
+
+echo "Some more things todo:"
+echo "\n"
+echo "Generate a \"Personal Access Token\" to enable push/pull Github access"
+echo "https://github.com/settings/tokens"

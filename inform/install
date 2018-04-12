@@ -1,0 +1,11 @@
+#/bin/bash
+
+echo "Here's a list of items you need to download for Inform"
+
+echo "Hipchat"
+open "https://www.hipchat.com/downloads"
+
+echo "Setting up machine"
+echo "VPN keys"
+
+echo "Java specific settings"
