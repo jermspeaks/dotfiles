@@ -154,7 +154,7 @@ export PATH=/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # pip should only run if there is a virtualenv currently activated
-export PIP_REQUIRE_VIRTUALENV=true
+export PIP_REQUIRE_VIRTUALENV=false
 # cache pip-installed packages to avoid re-downloading
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 alias venv="source ~/pj/venv/bin/activate venv"
@@ -199,6 +199,7 @@ export PATH="$PATH:$HOME/.stack/global-project/.stack-work/install/x86_64-osx/lt
 # Java projects
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export PATH=${JAVA_HOME}/bin:$PATH
+export PATH=$PATH:/opt/apache-maven/bin
 
 # Haskell projects
 export PATH="$HOME/.stack/snapshots/x86_64-osx/lts-6.10/7.10.3/bin:$HOME/.stack/programs/x86_64-osx/ghc-7.10.3/bin:$PATH"
@@ -220,3 +221,5 @@ function pet-select() {
 }
 zle -N pet-select
 bindkey '^s' pet-select
+
+alias scdl="python3 -m scdl.scdl"

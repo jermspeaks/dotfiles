@@ -105,7 +105,6 @@
     disableWhenNoConfigFileInPath: true
   "linter-ui-default":
     minimap: {}
-    showPanel: true
   "package-sync":
     forceOverwrite: true
   "release-notes":
