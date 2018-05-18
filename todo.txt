@@ -63,3 +63,5 @@ Installing Browsers:
 
 [Chrome](https://www.google.com/chrome/browser/desktop/index.html)
 [Firefox](https://www.mozilla.org/en-US/)
+
+Add [Spaceship ZSH theme](https://github.com/denysdovhan/spaceship-prompt)

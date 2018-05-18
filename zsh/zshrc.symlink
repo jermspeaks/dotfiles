@@ -49,7 +49,9 @@ export PATH="$PATH:/Users/jeremywong/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
+# https://github.com/denysdovhan/spaceship-prompt
+ZSH_THEME="spaceship"
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/dsa_id"
