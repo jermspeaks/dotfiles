@@ -36,7 +36,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git vi-mode vagrant atom bower brew colorize bundler bower)
+plugins=(git vi-mode vagrant brew colorize bundler)
 
 # Bundled Commands
 BUNDLED_COMMANDS=(rubocop)
