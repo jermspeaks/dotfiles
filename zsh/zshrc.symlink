@@ -163,6 +163,7 @@ alias venv="source ~/pj/venv/bin/activate venv"
 
 # Go Set-up
 export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
 export GOROOT=/usr/local/opt/go/libexec
 export GOWORKSPACE=$GOPATH/src/github.com/jermspeaks
 export PATH=$PATH:$GOPATH/bin
