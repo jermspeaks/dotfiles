@@ -1,3 +1,4 @@
+# ZSH Configuration
 # Shortcut to dotfiles
 export ZSH=$HOME/.dotfiles
 
@@ -12,14 +13,6 @@ do
 done
 
 unset config_files
-
-# Amazon Keys
-#alias reverb-prod-env="source ~/.ec2/prod-keys; boatwrightCleanup"
-#alias reverb-dev-env="source ~/.ec2/dev-keys; boatwrightCleanup"
-alias ndn-dev="source ~/.ndn-aws-creds; boatwrightCleanup"
-
-# Run NDN Development Environment
-#ndn-dev
 
 # Autocompletions
 fpath=(/usr/local/share/zsh/site-functions $fpath)
@@ -41,10 +34,6 @@ plugins=(git vi-mode vagrant brew colorize bundler)
 # Bundled Commands
 BUNDLED_COMMANDS=(rubocop)
 
-# User configuration
-
-export PATH="$PATH:/Users/jeremywong/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Users/Jeremy/.local/bin"
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -52,24 +41,6 @@ export PATH="$PATH:/Users/jeremywong/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:
 # ZSH_THEME="robbyrussell"
 # https://github.com/denysdovhan/spaceship-prompt
 ZSH_THEME="spaceship"
-
-# ssh
-export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# DirENV
-#eval "$(direnv hook zsh)"
-
-# PHP Environment - v5.6
-#export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
-
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
-# WP-CLI Bash completions
-#autoload bashcompinit
-#bashcompinit
-#source $HOME/.composer/vendor/wp-cli/wp-cli/utils/wp-completion.bash
 
 # want your terminal to support 256 color schemes? I do ...
 export TERM="xterm-256color"
@@ -84,64 +55,96 @@ setopt interactivecomments
 # Zsh has a spelling corrector
 setopt CORRECT
 
+# load oh my zsh
+source $ZSH/oh-my-zsh.sh
+
+# Reverb / NDN / Inform Amazon Keys
+# alias reverb-prod-env="source ~/.ec2/prod-keys; boatwrightCleanup"
+# alias reverb-dev-env="source ~/.ec2/dev-keys; boatwrightCleanup"
+# alias ndn-dev="source ~/.ndn-aws-creds; boatwrightCleanup"
+
+# Run NDN Development Environment
+# ndn-dev
+
+# User configuration
+
+export PATH="$PATH:/Users/jeremywong/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Users/Jeremy/.local/bin"
+export PATH="/usr/local/sbin:$PATH"
+
+# ssh
+export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# DirENV
+#eval "$(direnv hook zsh)"
+
+# PHP Environment - v5.6
+#export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+
+# RVM Configuration - for Rubygems
+# export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+# WP-CLI Bash completions
+#autoload bashcompinit
+#bashcompinit
+#source $HOME/.composer/vendor/wp-cli/wp-cli/utils/wp-completion.bash
+
 # Defines transfer alias and provides easy command line file and folder sharing.
 #
 # Authors:
 #   Remco Verhoef <remco@dutchcoders.io>
 #
 
-if (( ! $+commands[curl] )); then
-  return 1
-fi
+# if (( ! $+commands[curl] )); then
+#   return 1
+# fi
 
-transfer() {
-    # check arguments
-    if [ $# -eq 0 ];
-    then
-        echo "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"
-        return 1
-    fi
+# transfer() {
+#     # check arguments
+#     if [ $# -eq 0 ];
+#     then
+#         echo "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"
+#         return 1
+#     fi
 
-    # get temporarily filename, output is written to this file show progress can be showed
-    tmpfile=$( mktemp -t transferXXX )
+#     # get temporarily filename, output is written to this file show progress can be showed
+#     tmpfile=$( mktemp -t transferXXX )
 
-    # upload stdin or file
-    file=$1
+#     # upload stdin or file
+#     file=$1
 
-    if tty -s;
-    then
-        basefile=$(basename "$file" | sed -e 's/[^a-zA-Z0-9._-]/-/g')
+#     if tty -s;
+#     then
+#         basefile=$(basename "$file" | sed -e 's/[^a-zA-Z0-9._-]/-/g')
 
-        if [ ! -e $file ];
-        then
-            echo "File $file doesn't exists."
-            return 1
-        fi
+#         if [ ! -e $file ];
+#         then
+#             echo "File $file doesn't exists."
+#             return 1
+#         fi
 
-        if [ -d $file ];
-        then
-            # zip directory and transfer
-            zipfile=$( mktemp -t transferXXX.zip )
-            cd $(dirname $file) && zip -r -q - $(basename $file) >> $zipfile
-            curl --progress-bar --upload-file "$zipfile" "https://transfer.sh/$basefile.zip" >> $tmpfile
-            rm -f $zipfile
-        else
-            # transfer file
-            curl --progress-bar --upload-file "$file" "https://transfer.sh/$basefile" >> $tmpfile
-        fi
-    else
-        # transfer pipe
-        curl --progress-bar --upload-file "-" "https://transfer.sh/$file" >> $tmpfile
-    fi
+#         if [ -d $file ];
+#         then
+#             # zip directory and transfer
+#             zipfile=$( mktemp -t transferXXX.zip )
+#             cd $(dirname $file) && zip -r -q - $(basename $file) >> $zipfile
+#             curl --progress-bar --upload-file "$zipfile" "https://transfer.sh/$basefile.zip" >> $tmpfile
+#             rm -f $zipfile
+#         else
+#             # transfer file
+#             curl --progress-bar --upload-file "$file" "https://transfer.sh/$basefile" >> $tmpfile
+#         fi
+#     else
+#         # transfer pipe
+#         curl --progress-bar --upload-file "-" "https://transfer.sh/$file" >> $tmpfile
+#     fi
 
-    # cat output link
-    cat $tmpfile
+#     # cat output link
+#     cat $tmpfile
 
-    # cleanup
-    rm -f $tmpfile
-}
-
-export PATH="/usr/local/sbin:$PATH"
+#     # cleanup
+#     rm -f $tmpfile
+# }
 
 # Python Path
 # export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
@@ -172,11 +175,14 @@ export PATH=$PATH:$GOROOT/bin
 # Octave
 alias octave-start="/usr/local/octave/3.8.0/bin/octave-3.8.0 ; exit;"
 
-# Npm Packages
+# npm Packages
 NPM_PACKAGES="${HOME}/.npm-packages"
 prefix=${HOME}/.npm-packages
 NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 PATH="$NPM_PACKAGES/bin:$PATH"
+
+# Fix npm permissions
+export PATH=~/.npm-global/bin:$PATH
 
 # Unset manpath so we can inherit from /etc/manpath via the `manpath`
 # command
@@ -187,9 +193,6 @@ PATH="$NPM_PACKAGES/bin:$PATH"
 #export PATH="$PATH:$HOME/.rvm/bin:$HOME/.rvm/gems/ruby-2.1.5/bin" # Add RVM to PATH for scripting
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-# load oh my zsh
-source $ZSH/oh-my-zsh.sh
-
 # load torch for specialized graphics
 # . /Users/Jeremy/torch/install/bin/torch-activate
 
@@ -197,64 +200,70 @@ source $ZSH/oh-my-zsh.sh
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
 
 # Stack Path config
-export PATH="$PATH:$HOME/.stack/global-project/.stack-work/install/x86_64-osx/lts-6.9/7.10.3/pkgdb:$HOME/.stack/snapshots/x86_64-osx/lts-6.9/7.10.3/pkgdb:$HOME/.stack/programs/x86_64-osx/ghc-7.10.3/lib/ghc-7.10.3/package.conf.d:$HOME/.stack/snapshots/x86_64-osx/lts-6.9/7.10.3/bin:$HOME/.stack/programs/x86_64-osx/ghc-7.10.3/bin"
+# export PATH="$PATH:$HOME/.stack/global-project/.stack-work/install/x86_64-osx/lts-6.9/7.10.3/pkgdb:$HOME/.stack/snapshots/x86_64-osx/lts-6.9/7.10.3/pkgdb:$HOME/.stack/programs/x86_64-osx/ghc-7.10.3/lib/ghc-7.10.3/package.conf.d:$HOME/.stack/snapshots/x86_64-osx/lts-6.9/7.10.3/bin:$HOME/.stack/programs/x86_64-osx/ghc-7.10.3/bin"
 
 # Java projects
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-export PATH=${JAVA_HOME}/bin:$PATH
-export PATH=$PATH:/opt/apache-maven/bin
+# export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+# export PATH=${JAVA_HOME}/bin:$PATH
+# export PATH=$PATH:/opt/apache-maven/bin
 
 # Haskell projects
-export PATH="$HOME/.stack/snapshots/x86_64-osx/lts-6.10/7.10.3/bin:$HOME/.stack/programs/x86_64-osx/ghc-7.10.3/bin:$PATH"
+# export PATH="$HOME/.stack/snapshots/x86_64-osx/lts-6.10/7.10.3/bin:$HOME/.stack/programs/x86_64-osx/ghc-7.10.3/bin:$PATH"
 
 # Add Yarn
 export PATH="$HOME/.yarn/bin:$PATH"
 
 # Registers the previous command to `pet`
-function prev() {
-  PREV=$(fc -lrn | head -n 1)
-  sh -c "pet new `printf %q "$PREV"`"
-}
+# function prev() {
+#   PREV=$(fc -lrn | head -n 1)
+#   sh -c "pet new `printf %q "$PREV"`"
+# }
 
 # Selects snippets at the current line
-function pet-select() {
-  BUFFER=$(pet search --query "$LBUFFER")
-  CURSOR=$#BUFFER
-  zle redisplay
-}
-zle -N pet-select
-bindkey '^s' pet-select
+# function pet-select() {
+#   BUFFER=$(pet search --query "$LBUFFER")
+#   CURSOR=$#BUFFER
+#   zle redisplay
+# }
+# zle -N pet-select
+# bindkey '^s' pet-select
 
 alias scdl="python3 -m scdl.scdl"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/jeremywong/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/jeremywong/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/jeremywong/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/jeremywong/google-cloud-sdk/completion.zsh.inc'; fi
 
 # Load aliases from common aliases file
 if [ -f ~/.aliases ]; then
   . ~/.aliases
 fi
-export PATH="/usr/local/opt/icu4c/bin:$PATH"
-export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+
+# OpenCV Paths
+# export PATH="/usr/local/opt/icu4c/bin:$PATH"
+# export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 
 # OpenCV additional exports
-export LDFLAGS="-L/usr/local/opt/openblas/lib"
-export CPPFLAGS="-I/usr/local/opt/openblas/include"
+# export LDFLAGS="-L/usr/local/opt/openblas/lib"
+# export CPPFLAGS="-I/usr/local/opt/openblas/include"
 
-export PKG_CONFIG_PATH="/usr/local/opt/openblas/lib/pkgconfig"
-export PATH="/usr/local/opt/sphinx-doc/bin:$PATH"
-export PATH="/usr/local/opt/icu4c/bin:$PATH"
-export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+# export PKG_CONFIG_PATH="/usr/local/opt/openblas/lib/pkgconfig"
+# export PATH="/usr/local/opt/sphinx-doc/bin:$PATH"
+# export PATH="/usr/local/opt/icu4c/bin:$PATH"
+# export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+
 # For compilers to find icu4c you may need to set:
-  export LDFLAGS="-L/usr/local/opt/icu4c/lib"
-  export CPPFLAGS="-I/usr/local/opt/icu4c/include"
+# export LDFLAGS="-L/usr/local/opt/icu4c/lib"
+# export CPPFLAGS="-I/usr/local/opt/icu4c/include"
 
 # For pkg-config to find icu4c you may need to set:
-  export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig"
+# export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig"
 
-# Fix npm permissions
-export PATH=~/.npm-global/bin:$PATH
-alias lzd='lazydocker'
+# alias lzd='lazydocker'
+# export PATH="/Users/jeremywong/projects/git-fuzzy/bin:$PATH"
+
+# Python 3 alias
+alias python='python3'
+export CLOUDSDK_PYTHON=$(brew --prefix python@3.8)/bin/python3
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jeremywong/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jeremywong/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/jeremywong/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jeremywong/google-cloud-sdk/completion.zsh.inc'; fi
