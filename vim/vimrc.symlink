@@ -11,45 +11,45 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
 
 " Plugins
 " Plugins start
-Plugin 'VundleVim/Vundle.vim'     " package manager (required)
-Plugin 'tpope/vim-fugitive'       " git tool
-Plugin 'godlygeek/tabular'        " text filtering & alignment
-Plugin 'plasticboy/vim-markdown'  " markdown syntax
-Plugin 'tpope/vim-surround'       " surround command
-Plugin 'pangloss/vim-javascript'  " Javascript language
-Plugin 'mxw/vim-jsx'							" Javascript JSX language
-Plugin 'moll/vim-node'            " Node go to require file
-Plugin 'flazz/vim-colorschemes'		" Vim Colorschemes
-Plugin 'lambdatoast/elm.vim'			" Elm Language
-Plugin 'scrooloose/nerdtree'			" Directory
-Plugin 'wincent/command-t'				" Fast file navigation
-Plugin 'suan/vim-instant-markdown' " Markdown Preview
-Plugin 'vim-airline/vim-airline'	" Airline bar, like Powerline
+" Plugin 'VundleVim/Vundle.vim'     " package manager (required)
+" Plugin 'tpope/vim-fugitive'       " git tool
+" Plugin 'godlygeek/tabular'        " text filtering & alignment
+" Plugin 'plasticboy/vim-markdown'  " markdown syntax
+" Plugin 'tpope/vim-surround'       " surround command
+" Plugin 'pangloss/vim-javascript'  " Javascript language
+" Plugin 'mxw/vim-jsx'							" Javascript JSX language
+" Plugin 'moll/vim-node'            " Node go to require file
+" Plugin 'flazz/vim-colorschemes'		" Vim Colorschemes
+" Plugin 'lambdatoast/elm.vim'			" Elm Language
+" Plugin 'scrooloose/nerdtree'			" Directory
+" Plugin 'wincent/command-t'				" Fast file navigation
+" Plugin 'suan/vim-instant-markdown' " Markdown Preview
+" Plugin 'vim-airline/vim-airline'	" Airline bar, like Powerline
 " Plugins end
-call vundle#end()            " required
+" call vundle#end()            " required
 
 " Set Options for Go
-set rtp+=/usr/local/go/misc/vim
-filetype plugin indent on    " required
+" set rtp+=/usr/local/go/misc/vim
+" filetype plugin indent on    " required
 
-colorscheme monokai           " set color scheme @Monokai
+" colorscheme monokai           " set color scheme @Monokai
 
 " Markdown Settings
 " Disable Folding
-let g:vim_markdown_folding_disabled = 1
-let g:instant_markdown_autostart = 1
-let g:instant_markdown_slow = 1
+" let g:vim_markdown_folding_disabled = 1
+" let g:instant_markdown_autostart = 1
+" let g:instant_markdown_slow = 1
 
 " Automatically start nerdtree
 " autocmd vimenter * NERDTree
 
 " Add JSX syntax to .js files too
-let g:jsx_ext_required = 0
+" let g:jsx_ext_required = 0
 
 " Default airline with tabline and extensions
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1

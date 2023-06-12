@@ -267,3 +267,12 @@ if [ -f '/Users/jeremywong/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jere
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/jeremywong/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jeremywong/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Alias pip3 as pip
+function pip {
+    if [[ $(which pip3) ]]; then
+        pip3 "$@"
+    else
+        echo "pip3 command not found. Make sure Python 3 and pip3 are installed."
+    fi
+}
