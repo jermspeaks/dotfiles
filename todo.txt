@@ -65,3 +65,16 @@ Installing Browsers:
 [Firefox](https://www.mozilla.org/en-US/)
 
 Add [Spaceship ZSH theme](https://github.com/denysdovhan/spaceship-prompt)
+
+Custom Fonts
+
+- Cloister Black
+- Hack Nerd Font
+- Hack Nerd Font Mono
+- Hack NF
+- Hack NFM
+- New York
+- New York Extra Large
+- New York Large
+- New York Medium
+- New York Small
